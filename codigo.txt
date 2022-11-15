@@ -1,0 +1,74 @@
+<div className="wrap-input">
+         <MaskedInput />
+          <span className="focus-input" data-placeholder="CPF"></span>
+        </div>
+
+
+	   <label>
+                    CPF
+                    <input {...register("cpf")} />
+                </label>
+
+                <label>
+                    Endereço:
+                    <input {...register("adress")} />
+                </label>
+
+                <label>
+                    Telefone:
+                    <input {...register("tel")} />
+                </label>
+
+
+ <form onSubmit={handleSubmit(onSubmit)}>
+                <label>
+                    Nome
+                    <input type='text' {...register("name", { required: true }) } />
+                    <span>{errors.name?.message}</span>
+                </label>
+
+                <label>
+                    CPF
+                    <input type="text" maxLength={13} {...register("cpf", { required: true })} />
+                    <span>{errors.cpf?.message}</span>
+                </label>
+
+                <label>
+                    Endereço:
+                    <input {...register("adress", { required: true })} />
+                    <span>{errors.adress?.message}</span>
+                </label>
+
+                <label>
+                    Telefone:
+                    <input type="text" {...register("tel", { required: true })} />
+                    <span>{errors.phone?.message}</span>
+                </label>
+
+                <label>
+                    Email
+                    <input type="text" {...register("email", { required: true })} />
+                    <span>{errors.email?.message}</span>
+                </label>
+
+                <label>
+                    Senha:
+                    <input type="password" {...register("password", { required: true })} />
+                    <span>{errors.password?.message}</span>
+                </label>
+
+                <label>
+                    Confirmar Senha:
+                    <input type="password" {...register("confirmPassword", { required: true })} />
+                    <span>{errors.confirmPassword?.message}</span>
+                </label>
+                <button type="submit">Cadastrar</button>
+            </form> 
+
+
+
+<Formik
+          initialValues={{ CPF: "" }}
+          validationSchema={Schema}
+
+.test((value) => cpf.isValid(value))
